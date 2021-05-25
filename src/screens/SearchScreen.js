@@ -1,43 +1,36 @@
 import React, {useState} from 'react'
-import {View, Text, StyleSheet} from "react-native";
+import {View, Text, StyleSheet, ScrollView} from "react-native";
 import SearchBar from "../components/SearchBar";
-import yelp from "../api/yelp";
+import useRestaurants from "../hooks/useRestaurants";
+import RestaurantsList from "../components/RestaurantsList";
+import NavigationContext from "../context/navigation-context";
 
-const SearchScreen = () => {
+const SearchScreen = ({navigation}) => {
     const [term, setTerm] = useState('')
-    const [results, setResults] = useState([])
-    const [errorMessage, setErrorMessage] = useState('')
+    const [searchAPI, restaurants, errorMessage] = useRestaurants()
 
-    const searchAPI = async (searchTerm) => {
-        try {
-            const response = await yelp.get('/search', {
-                params: {
-                    limit:50,
-                    term: searchTerm,
-                    location: 'san jose'
-                }
-            })
-            setResults(response.data.businesses)
-        }
-        catch (e) {
-            setErrorMessage('Something Went Wrong')
-        }
+    const filterRestaurantsByPrice = (price) => {
+        return restaurants.filter(restaurant => {
+            return restaurant.price === price
+        })
     }
 
     return(
-        <View>
+        <>
             <SearchBar
                 term={term}
                 onTermChange = {newTerm => setTerm(newTerm)}
                 onTermSubmit = {() => searchAPI(term)}
             />
-            <Text>
-                {term}
-            </Text>
-            <Text>
-                {results.length}
-            </Text>
-        </View>
+            {errorMessage ? <Text>{errorMessage}</Text> : null}
+            <NavigationContext.Provider value={navigation}>
+                <ScrollView>
+                    <RestaurantsList restaurants={filterRestaurantsByPrice('$')} title={'Cost Effective'} />
+                    <RestaurantsList restaurants={filterRestaurantsByPrice('$$')} title={'Big Pricier'} />
+                    <RestaurantsList restaurants={filterRestaurantsByPrice('$$$')} title={'Big Spender'} />
+                </ScrollView>
+            </NavigationContext.Provider>
+        </>
     )
 };
 

@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3578f681-9919-4f31-9923-6ab6c97e1e0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/RestaurantItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RestaurantsList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/navigation-context.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useRestaurants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/RestaurantShowScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/yelp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/yelp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/SearchScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/SearchScreen.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -47,6 +53,9 @@
       <workItem from="1621357106520" duration="2584000" />
       <workItem from="1621531033426" duration="91000" />
       <workItem from="1621703860862" duration="7243000" />
+      <workItem from="1621790390031" duration="3000" />
+      <workItem from="1621790405616" duration="7631000" />
+      <workItem from="1621961406778" duration="4702000" />
     </task>
     <servers />
   </component>
@@ -63,5 +72,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
