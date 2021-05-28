@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import {View, Text, StyleSheet, Dimensions, Image, FlatList} from "react-native";
+import {View, Text, StyleSheet, Dimensions, Image} from "react-native";
 import yelp from "../api/yelp";
 import Carousel from "react-native-snap-carousel";
-import RestaurantItem from "../components/RestaurantItem";
 
 const RestaurantShowScreen = ({route}) => {
     const windowWidth = Dimensions.get('window').width
